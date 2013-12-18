@@ -10,6 +10,8 @@
             <%=h(comment.user.name)%>
             <%=admin_value(comment.created_at)%>
             <% end %>
+	    <%= comment.visible ? 'Visible' : 'Hidden' %>
+            <%= check_box_tag 'test' %> 
           <blockquote class="incoming-message">
             <%= truncate(comment.body, :length => 400) %>
           </blockquote>
