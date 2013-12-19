@@ -12,7 +12,7 @@
             <%=admin_value(comment.created_at)%>
             <% end %>
 	    <%= comment.visible ? 'Visible' : 'Hidden' %>
-            <%= check_box_tag 'test' %> 
+            <%= check_box_tag 'comment_ids[]', comment.id %> 
           <blockquote class="incoming-message">
             <%= truncate(comment.body, :length => 400) %>
           </blockquote>
