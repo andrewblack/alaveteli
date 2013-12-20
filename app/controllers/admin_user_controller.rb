@@ -98,6 +98,13 @@ class AdminUserController < AdminController
         redirect_to admin_user_show_url(@admin_user)
     end
 
+    def modify_comment_visbility
+        puts "Andrew wos ere"
+        
+        redirect_to admin_user_show_url(@admin_user)
+ 
+    end
+
     private
 
 end
