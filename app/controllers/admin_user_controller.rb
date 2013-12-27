@@ -99,6 +99,8 @@ class AdminUserController < AdminController
     end
 
     def modify_comment_visibility
+        @admin_user = User.find(params[:id])
+
         puts "Andrew wos ere"
         
         redirect_to admin_user_show_url(@admin_user)
