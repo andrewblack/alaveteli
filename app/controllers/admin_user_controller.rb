@@ -102,7 +102,10 @@ class AdminUserController < AdminController
         @admin_user = User.find(params[:id])
 
         puts "Andrew wos ere"
-        
+        comments_to_change =  params[:comment_ids]
+        comment_value = false   # TODO get fromm params 
+        Comment.update_all( ["visible=?", comment_value] , :id => comments_to_change )
+
         redirect_to admin_user_show_url(@admin_user)
  
     end
