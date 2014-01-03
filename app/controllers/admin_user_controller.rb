@@ -100,7 +100,7 @@ class AdminUserController < AdminController
 
     def modify_comment_visibility
         comments_to_change =  params[:comment_ids]
-        comment_value = false   # TODO get fromm params 
+        comment_value = params[:newstate]=="visible"
         Comment.update_all( ["visible=?", comment_value] , :id => comments_to_change )
         # This can be called from either user or request page. return to 
         # the one we came from
