@@ -99,15 +99,12 @@ class AdminUserController < AdminController
     end
 
     def modify_comment_visibility
-        @admin_user = User.find(params[:id])
-
-        puts "Andrew wos ere"
         comments_to_change =  params[:comment_ids]
         comment_value = false   # TODO get fromm params 
         Comment.update_all( ["visible=?", comment_value] , :id => comments_to_change )
-
-        redirect_to admin_user_show_url(@admin_user)
- 
+        # This can be called from either user or request page. return to 
+        # the one we came from
+        redirect_to  request.referer
     end
 
     private
